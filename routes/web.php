@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PageController;
+use App\Http\Controllers\PeminjamanController;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,7 +16,7 @@ use App\Http\Controllers\PageController;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('template/home');
 });
 
 // rute untuk halaman login
@@ -37,4 +38,20 @@ Route::get('/peminjaman', function () {
 Route::get('/pengembalian', function () {
     return view('pengembalian');
 });
+
+// rute untuk halaman pengembalian
+Route::get('/peminjaman', function () {
+    return view('template/peminjaman');
+});
+
+/*Route::get('/peminjaman', function () {
+    return view('Template/peminjaman');
+})
+*/
+
+Route::get('template/peminjaman', [PeminjamanController::class, 'index']);
+
+
+
+
 
