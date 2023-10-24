@@ -5,11 +5,11 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class peminjaman extends Model
+class Peminjaman extends Model
 {
     use HasFactory;
 
-    //protected $primarykey = 'kode_buku';
+    protected $primaryKey = 'kode_buku';
 
     protected $fillable = [
         'id',
@@ -22,4 +22,7 @@ class peminjaman extends Model
         'petugas',
     ];
 
+    public function buku() {
+        return $this->belongsToMany(Buku::class);
+    }
 }

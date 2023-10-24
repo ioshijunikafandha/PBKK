@@ -67,6 +67,19 @@ button:hover {
 
     </style>
 </head>
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="{{ asset('css/styles.css') }}">
+</head>
+<body>
+    <h1>Data Peminjaman Buku</h1>
+    <ul class="book-list">
+        @foreach ($peminjaman as $peminjaman)
+            <li>{{ $peminjaman->judul_buku }}</li>
+        @endforeach
+    </ul>
+</body>
+</html>
 <body>
     <div class="borrow-container">
         <h2>Peminjaman Buku</h2>
